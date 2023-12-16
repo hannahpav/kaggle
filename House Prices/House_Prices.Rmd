@@ -1,0 +1,30 @@
+---
+title: "House Prices"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\*\*\* REVISION NOTE: Check to see if necessary packages are installed.
+If not, install them \*\*\*
+
+```{r include=FALSE}
+# lists all packages needed in this notebook
+packages_list = list( 'tidyverse', 'corrplot', 'caTools', 'car',
+                     'glmnet','caret','kknn','rpart','rpart.plot','randomForest',"pROC")
+# checks to see if package is installed.  If not, installs and loads it 'knitr',
+for (i in packages_list) {
+  if (!require(i, character.only=TRUE)) install.packages(i, character.only=TRUE); library(i, character.only=TRUE)
+}
+
+# removes the assignment of i and packages_list
+rm(i, packages_list)
+```
+
+## Overview
+
+I have to set up the R package stuff but i'm just shit at it without hte template aren't i
