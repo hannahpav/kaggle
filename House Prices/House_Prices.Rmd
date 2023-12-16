@@ -28,3 +28,26 @@ rm(i, packages_list)
 ## Overview
 
 I have to set up the R package stuff but i'm just shit at it without hte template aren't i
+what next?
+
+## Preparing the Data
+
+### Reading data
+
+```{r read_data, message=FALSE}
+# Set color codes
+gtblue = rgb(0, 48, 87, maxColorValue = 255)
+techgold = rgb(179, 163, 105, maxColorValue = 255)
+buzzgold = rgb(234, 170, 0, maxColorValue = 255)
+bobbyjones = rgb(55, 113, 23, maxColorValue = 255)
+
+# Read the data using read_csv
+htrain <- read.csv("train.csv",header=TRUE)
+htest <- read.csv("test.csv",header=TRUE)
+```
+
+
+```{r}
+
+```
+
