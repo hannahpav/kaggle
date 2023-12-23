@@ -44,6 +44,33 @@ bobbyjones = rgb(55, 113, 23, maxColorValue = 255)
 # Read the data using read_csv
 htrain <- read.csv("train.csv",header=TRUE)
 htest <- read.csv("test.csv",header=TRUE)
+attach(htrain)
+```
+
+### General Data Prep
+```{r}
+# Remove Id column, it is not necessary
+htrain = htrain[-1]
+```
+
+### Correlation among the numeric variables
+
+```{r correlation}
+# Select numerical variables
+h.num <- na.omit(h.num[ , which(sapply(h.num, is.numeric))])
+# Create correlation matrix
+corr <- cor(h.num)
+# Create correlation plot
+col <- colorRampPalette(c(buzzgold,"white", gtblue))(10)
+par(mfrow=c(1,1))
+corrplot(corr, method = "number", type = "upper", tl.col="black", col = col)
+```
+### Categorical Variables
+
+```{r data_prep}
+# Convert categorical variables to factors
+numnames <- colnames(h.num)
+htrain <- htrain %>% mutate_at(vars(-c(numnames)), as.factor)
 ```
 
 
